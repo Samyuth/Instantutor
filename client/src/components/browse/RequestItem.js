@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addToPeerRequest } from '../../actions/request';
 
 const RequestItem = ({ peer_request, addToPeerRequest }) => {
+    console.log(peer_request)
     const { course, request, user, subject, grade, topic, help_time, _id } = peer_request
 
     return (
@@ -35,7 +36,7 @@ const RequestItem = ({ peer_request, addToPeerRequest }) => {
                         className="btn-confirm"
                         onClick={() => addToPeerRequest(_id)}
                     >
-                        Tell student you're interested
+                        Choose student
                     </button>
                 </div>
             </div>

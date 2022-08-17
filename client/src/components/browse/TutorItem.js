@@ -18,6 +18,15 @@ const TutorItem = ({ profile }) => {
             <i className="fas fa-user-circle"> </i> View Profile
             </Link>
 
+            <div>
+                <button
+                    className="btn-confirm"
+                    onClick={() => console.log('click')}
+                >
+                    Choose tutor
+                </button>
+            </div>
+
         </div>
     )
 }
