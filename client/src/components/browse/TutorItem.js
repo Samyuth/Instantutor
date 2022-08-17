@@ -12,19 +12,19 @@ const TutorItem = ({ profile }) => {
             </div>
 
             <Link
-            to={`/profile/${_id}`}
-            className="btn btn-primary"
+                to={`/profile/${_id}`}
+                className="btn btn-primary"
             >
-            <i className="fas fa-user-circle"> </i> View Profile
+                <i className="fas fa-user-circle"> </i> View Profile
             </Link>
 
             <div>
-                <button
+                <Link
+                    to="request_select"
                     className="btn-confirm"
-                    onClick={() => console.log('click')}
                 >
                     Choose tutor
-                </button>
+                </Link>
             </div>
 
         </div>

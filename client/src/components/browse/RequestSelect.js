@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getRequestHistory } from '../../actions/request'
+import { Link } from 'react-router-dom'
 import Spinner from '../layout/Spinner'
 import RequestItem from './RequestItem'
 
@@ -21,6 +22,9 @@ const RequestSelect = ({
             <h1 className="large text-primary">
                 Choose a Request
             </h1>
+            <p className="lead">
+                Choose which request you want help with
+            </p>
 
             {
                 loading
@@ -38,12 +42,19 @@ const RequestSelect = ({
                             <div className='request '>
                                 {req_history.map((request) => (
                                     request !== null && request !== undefined
-                                        ? <RequestItem key={request._id} peer_request={request} />
+                                        ? <RequestItem key={request._id} peer_request={request} tutor={false} />
                                         : null
                                 ))}
                             </div>
                         )
-        }
+            }
+
+            <Link
+                to="browse"
+                className="btn btn-dark"
+            >
+                Go Back
+            </Link> 
         </div>
     )
 }

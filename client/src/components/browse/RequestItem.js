@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { addToPeerRequest } from '../../actions/request';
 
-const RequestItem = ({ peer_request, addToPeerRequest }) => {
+const RequestItem = ({ peer_request, addToPeerRequest, tutor=true }) => {
     console.log(peer_request)
     const { course, request, user, subject, grade, topic, help_time, _id } = peer_request
 
@@ -34,9 +34,9 @@ const RequestItem = ({ peer_request, addToPeerRequest }) => {
                 <div>
                     <button
                         className="btn-confirm"
-                        onClick={() => addToPeerRequest(_id)}
+                        onClick={() => tutor ? addToPeerRequest(_id) : console.log("tutor selected")}
                     >
-                        Choose student
+                        {tutor ? "Choose Student" : "Choose Request"}
                     </button>
                 </div>
             </div>
